@@ -19,9 +19,13 @@ def count_smileys3(arr):
     return sum(1 for s in arr if match(r"\A[:;][-~]?[)D]\Z", s))
 
 
+def count_smileys4(arr):
+    arr = [i.replace('-', '').replace('~', '') for i in arr]
+    return sum(arr.count(i) for i in [':)', ':D', ';D', ';)'])
+
 def main():
     arr = [':)', ';(', ';}', ':-D']
-    print(count_smileys3(arr))
+    print(count_smileys4(arr))
 
 if __name__ == '__main__':
     main()
