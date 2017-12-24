@@ -23,9 +23,13 @@ def count_smileys4(arr):
     arr = [i.replace('-', '').replace('~', '') for i in arr]
     return sum(arr.count(i) for i in [':)', ':D', ';D', ';)'])
 
+def count_smileys5(arr):
+    return len(list(filter(lambda x: x in [':D', ':~D', ':-D', ';D',
+        ';~D', ';-D', ':)', ':~)', ':-)', ';)', ';~)', ';-)'], arr)))
+
 def main():
     arr = [':)', ';(', ';}', ':-D']
-    print(count_smileys4(arr))
+    print(count_smileys5(arr))
 
 if __name__ == '__main__':
     main()
