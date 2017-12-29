@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 char *smash(const char **words, size_t count) {
@@ -23,6 +24,8 @@ int main()
     const char *expected = "hello world";
     char *received = smash(words, sizeof(words)/sizeof(words[0]));
     printf("%s : %s\n", expected, received);
+    if(strcmp(expected, received) == 0)
+        printf("Successfully!\n");
     free(received);
 
     return 0;
