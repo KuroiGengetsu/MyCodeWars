@@ -10,8 +10,7 @@ const char* patels[] = {
 };
 
 const char* how_much_i_love_you(int nb_petals) {
-    const char* result = patels[(nb_petals-1) % 6];
-    return result;
+    return patels[(nb_petals-1) % 6];
 }
 
 int main() {
