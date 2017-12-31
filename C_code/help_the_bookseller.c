@@ -4,12 +4,12 @@
 
 // szlst is lstOfArt size, szcat is categories size
 char* stockSummary(char** lstOfArt, int szlst, char** categories, int szcat) {
-    if(szlst == 0 || szcat == 0)
+    if(szlst == 0 || szcat == 0)  // if they are empty, return ""
         return "";
-    char *result = malloc(sizeof(char) * 11 * (szcat));
-    result[0] = '\0';
-    int sum[szcat];
-    memset(sum, 0, sizeof(sum));
+    char *result = malloc(sizeof(char) * 11 * (szcat));  // 动态分配空间
+    result[0] = '\0';  // 为了使用 strcat
+    int sum[szcat];  // 用于计算数字的和
+    memset(sum, 0, sizeof(sum));  // 初始化为0
     for(int i = 0; i < szcat; i++) {
         for(int j = 0; j < szlst; j++) {
             if(categories[i][0] == lstOfArt[j][0]) {
