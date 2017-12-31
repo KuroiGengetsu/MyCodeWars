@@ -40,6 +40,8 @@ int main() {
     char *cd[2] = {"A", "B"};
     // char *cd[0] = {};
     // "(A : 200) - (B : 1140)"
-    puts(stockSummary(art, 5, cd, 2));
+    char *result = stockSummary(art, 5, cd, 2);
+    puts(result);
+    free(result);
     return 0;
 }
