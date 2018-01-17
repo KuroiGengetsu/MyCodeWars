@@ -9,6 +9,7 @@
 
 int hex2dec(const char *src);
 int hex_to_dec(const char *source);
+int hex_to_dec2(const char *source);
 
 /**
  * 任意进制转十进制
@@ -22,6 +23,7 @@ int main() {
     printf("%d\n", hex_to_dec("AE"));
     printf("%d\n", radix2dec("AE", 16));
     printf("%d\n", radix_to_dec("AE", 16));
+    printf("%d\n", hex_to_dec2("AE"));
     printf("%d\n", radix_to_dec("11111111", 2));
     return 0;
 }
@@ -45,6 +47,12 @@ int hex2dec(const char *src) {
 
 int hex_to_dec(const char *source) {
     return (int)strtol(source, NULL, 16);
+}
+
+int hex_to_dec2(const char *source) {
+    int rex;
+    sscanf(source, "%x", &rex);
+    return rex;
 }
 
 int radix2dec(const char *src, int base) {
