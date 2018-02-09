@@ -17,8 +17,7 @@ int main() {
 }
 
 
-vector<int> showBits(int n0) {
-    long long n = n0;
+vector<int> showBits(long long n) {
     vector<int> bits(32);
     n = (n < 0) ? (4294967296 + n) : n;
     for (int i = 31; i >= 0, n > 0; i--) {
