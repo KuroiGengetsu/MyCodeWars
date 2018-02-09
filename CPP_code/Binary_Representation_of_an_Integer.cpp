@@ -27,3 +27,22 @@ vector<int> showBits(int n0) {
     }
     return bits;
 }
+
+vector<int> showBits2(long long n) {
+    vector<int> result(32);
+    for (int i = 31; i >= 0; --i) {
+        result[i] = n & 1;
+        n >>= 1;
+    }
+    return result;
+}
+
+#include <bitser>
+vector<int> showBits3(int n) {
+    bitset<32> bm(n);
+    vector<int> result(32, 0);
+    for (int i = 0; i < 32; i++) {
+        result[i] = bm[31 - i];
+    }
+    return result;
+}
